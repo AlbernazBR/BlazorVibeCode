@@ -1,6 +1,16 @@
 using CatalogoMotos2026.Components;
+using CatalogoMotos2026.Dados;
+using CatalogoMotos2026.Servicos;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configuração do banco de dados
+builder.Services.AddDbContext<AppDbContext>(opcoes =>
+    opcoes.UseSqlite(builder.Configuration.GetConnectionString("BancoDeDados")));
+
+// Registro dos serviços da aplicação
+builder.Services.AddScoped<IMotoService, MotoService>();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
