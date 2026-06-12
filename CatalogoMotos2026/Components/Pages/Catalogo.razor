@@ -45,6 +45,7 @@
                                      Placeholder="Ex: 1868"
                                      Required="true"
                                      RequiredError="A cilindrada é obrigatória."
+                                     ValidationError="Informe um número válido."
                                      Min="1"
                                      Max="9999"
                                      Variant="Variant.Outlined"
@@ -52,6 +53,7 @@
 
                     <MudNumericField @bind-Value="novaMoto.Ano"
                                      Label="Ano"
+                                     ValidationError="Informe um ano válido."
                                      Min="1900"
                                      Max="2100"
                                      Variant="Variant.Outlined"
