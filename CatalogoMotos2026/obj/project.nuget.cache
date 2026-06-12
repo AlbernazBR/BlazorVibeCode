@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "np3N/+JHxh4=",
+  "dgSpecHash": "SWSpXpm267Y=",
   "success": true,
   "projectFilePath": "C:\\Repository\\Estudos\\BlazorVibeCode\\CatalogoMotos2026\\CatalogoMotos2026.csproj",
   "expectedPackageFiles": [
@@ -24,6 +24,7 @@
     "C:\\Users\\Sylvio\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.9\\microsoft.extensions.dependencymodel.10.0.9.nupkg.sha512",
     "C:\\Users\\Sylvio\\.nuget\\packages\\microsoft.visualstudio.solutionpersistence\\1.0.52\\microsoft.visualstudio.solutionpersistence.1.0.52.nupkg.sha512",
     "C:\\Users\\Sylvio\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
+    "C:\\Users\\Sylvio\\.nuget\\packages\\mudblazor\\9.5.0\\mudblazor.9.5.0.nupkg.sha512",
     "C:\\Users\\Sylvio\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Sylvio\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.11\\sqlitepclraw.bundle_e_sqlite3.2.1.11.nupkg.sha512",
     "C:\\Users\\Sylvio\\.nuget\\packages\\sqlitepclraw.core\\2.1.11\\sqlitepclraw.core.2.1.11.nupkg.sha512",

@@ -524,6 +524,26 @@
           "buildTransitive/Mono.TextTemplating.targets": {}
         }
       },
+      "MudBlazor/9.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/net10.0/MudBlazor.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/MudBlazor.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/MudBlazor.targets": {},
+          "buildTransitive/MudBlazor.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/MudBlazor.props": {}
+        }
+      },
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
@@ -2114,6 +2134,37 @@
         "readme.md"
       ]
     },
+    "MudBlazor/9.5.0": {
+      "sha512": "mZiuKdOG42RkA/cZhiwNwbBZAKBExDx387ylvxzokcenRFHi8n4tq8olGuXs/oWNX1Qgo7Tj7J0AhOjjSnTpcw==",
+      "type": "package",
+      "path": "mudblazor/9.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "Nuget.png",
+        "README.md",
+        "analyzers/dotnet/cs/MudBlazor.Analyzers.CodeFixes.dll",
+        "analyzers/dotnet/cs/MudBlazor.Analyzers.dll",
+        "build/Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "build/MudBlazor.props",
+        "build/MudBlazor.targets",
+        "buildMultiTargeting/MudBlazor.props",
+        "buildTransitive/MudBlazor.props",
+        "lib/net10.0/MudBlazor.dll",
+        "lib/net10.0/MudBlazor.xml",
+        "lib/net8.0/MudBlazor.dll",
+        "lib/net8.0/MudBlazor.xml",
+        "lib/net9.0/MudBlazor.dll",
+        "lib/net9.0/MudBlazor.xml",
+        "mudblazor.9.5.0.nupkg.sha512",
+        "mudblazor.nuspec",
+        "staticwebassets/MudBlazor.min.css",
+        "staticwebassets/MudBlazor.min.js",
+        "staticwebassets/MudBlazor.min.js.map"
+      ]
+    },
     "Newtonsoft.Json/13.0.3": {
       "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
       "type": "package",
@@ -2429,7 +2480,8 @@
     "net10.0": [
       "Microsoft.AspNetCore.App.Internal.Assets >= 10.0.9",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.9",
-      "Microsoft.EntityFrameworkCore.Sqlite >= 10.0.9"
+      "Microsoft.EntityFrameworkCore.Sqlite >= 10.0.9",
+      "MudBlazor >= 9.5.0"
     ]
   },
   "packageFolders": {
@@ -2500,6 +2552,10 @@
           "Microsoft.EntityFrameworkCore.Sqlite": {
             "target": "Package",
             "version": "[10.0.9, )"
+          },
+          "MudBlazor": {
+            "target": "Package",
+            "version": "[9.5.0, )"
           }
         },
         "imports": [

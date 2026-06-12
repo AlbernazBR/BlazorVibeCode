@@ -1,4 +1,7 @@
 is_global = true
+build_property.MudDebugAnalyzer = 
+build_property.MudAllowedAttributePattern = 
+build_property.MudAllowedAttributeList = 
 build_property.TargetFramework = net10.0
 build_property.TargetFramework = net10.0
 build_property.TargetPlatformMinVersion = 
@@ -35,24 +38,16 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Repository/Estudos/BlazorVibeCode/CatalogoMotos2026/Components/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
+[C:/Repository/Estudos/BlazorVibeCode/CatalogoMotos2026/Components/Pages/Catalogo.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXRhbG9nby5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Repository/Estudos/BlazorVibeCode/CatalogoMotos2026/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Repository/Estudos/BlazorVibeCode/CatalogoMotos2026/Components/Pages/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Repository/Estudos/BlazorVibeCode/CatalogoMotos2026/Components/Pages/NotFound.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOb3RGb3VuZC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Repository/Estudos/BlazorVibeCode/CatalogoMotos2026/Components/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Repository/Estudos/BlazorVibeCode/CatalogoMotos2026/Components/Routes.razor]

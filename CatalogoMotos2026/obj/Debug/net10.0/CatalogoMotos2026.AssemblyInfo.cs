@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CatalogoMotos2026")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a22d12e662fc4e92854f1236dd8f323a1575a71e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dfa4e50a00ec6372f179dc6225ce1727f1a99037")]
 [assembly: System.Reflection.AssemblyProductAttribute("CatalogoMotos2026")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CatalogoMotos2026")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

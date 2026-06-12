@@ -1,23 +1,48 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
+<MudThemeProvider Theme="temaFintechDark" IsDarkMode="true" />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar Elevation="1" Color="Color.Default">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start"
+                       OnClick="AlternarMenu" />
+        <MudText Typo="Typo.h6" Class="ml-3" Style="color:#97dd3c; font-weight:700; letter-spacing:2px;">CATÁLOGO MOTOS 2026</MudText>
+    </MudAppBar>
+
+    <MudDrawer @bind-Open="menuAberto" ClipMode="DrawerClipMode.Always" Elevation="2" Width="200px">
         <NavMenu />
-    </div>
+    </MudDrawer>
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
+    <MudMainContent>
+        <MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-6 px-4">
             @Body
-        </article>
-    </main>
-</div>
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
 
-<div id="blazor-error-ui" data-nosnippet>
-    An unhandled error has occurred.
-    <a href="." class="reload">Reload</a>
-    <span class="dismiss">🗙</span>
-</div>
+@code {
+    private bool menuAberto = true;
+
+    private MudTheme temaFintechDark = new MudTheme()
+    {
+        PaletteDark = new PaletteDark()
+        {
+            Primary = "#97dd3c",          // Verde Lima Sofisa — acento principal
+            Secondary = "#9fa3ad",        // Cinza muted para textos secundários
+            Background = "#0e1116",       // Deep Navy — fundo base
+            Surface = "#14181f",          // Card surface ligeiramente mais clara
+            AppbarBackground = "#0e1116", // Topbar fundida ao fundo
+            DrawerBackground = "#0e1116", // Sidebar fundida ao fundo
+            TextPrimary = "#f2f2f2",      // Branco-gelo nítido
+            TextSecondary = "#9fa3ad",    // Cinza muted para labels e hints
+            ActionDefault = "#97dd3c",    // Ações e ícones no acento verde
+            LinesDefault = "#262b36",     // Divisórias sutis
+            TableLines = "#262b36"
+        }
+    };
+
+    private void AlternarMenu() => menuAberto = !menuAberto;
+}

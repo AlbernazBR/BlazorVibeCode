@@ -1,0 +1,198 @@
+@page "/"
+@inject IMotoService MotoService
+@inject IDialogService DialogService
+@inject ISnackbar Snackbar
+
+<PageTitle>Catálogo de Motocicletas</PageTitle>
+
+<MudText Typo="Typo.h4" Class="mb-6">Catálogo de Motocicletas 2026</MudText>
+
+<MudGrid>
+    <!-- Formulário de Cadastro -->
+    <MudItem xs="12" md="4">
+        <MudCard Elevation="0" Outlined="true">
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h6">Cadastrar Nova Motocicleta</MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent>
+                <MudForm @ref="formulario" @bind-IsValid="formularioValido">
+                    <MudTextField @bind-Value="novaMoto.Modelo"
+                                  Label="Modelo"
+                                  Placeholder="Ex: Fat Boy 114"
+                                  Required="true"
+                                  RequiredError="O modelo é obrigatório."
+                                  Variant="Variant.Outlined"
+                                  Class="mb-4" />
+
+                    <MudTextField @bind-Value="novaMoto.Familia"
+                                  Label="Família"
+                                  Placeholder="Ex: Softail"
+                                  Required="true"
+                                  RequiredError="A família é obrigatória."
+                                  Variant="Variant.Outlined"
+                                  Class="mb-4" />
+
+                    <MudNumericField @bind-Value="novaMoto.Cilindrada"
+                                     Label="Cilindrada (cc)"
+                                     Placeholder="Ex: 1868"
+                                     Required="true"
+                                     RequiredError="A cilindrada é obrigatória."
+                                     Min="1"
+                                     Max="9999"
+                                     Variant="Variant.Outlined"
+                                     Class="mb-4" />
+
+                    <MudNumericField @bind-Value="novaMoto.Ano"
+                                     Label="Ano"
+                                     Min="1900"
+                                     Max="2100"
+                                     Variant="Variant.Outlined"
+                                     Class="mb-4" />
+                </MudForm>
+            </MudCardContent>
+            <MudCardActions Class="px-4 pb-4">
+                <MudButton Variant="Variant.Filled"
+                           Color="Color.Primary"
+                           FullWidth="true"
+                           OnClick="CadastrarMotoAsync"
+                           Disabled="salvando">
+                    @if (salvando)
+                    {
+                        <MudProgressCircular Size="Size.Small" Indeterminate="true" Class="mr-2" />
+                        <span>Salvando...</span>
+                    }
+                    else
+                    {
+                        <span>Cadastrar</span>
+                    }
+                </MudButton>
+            </MudCardActions>
+        </MudCard>
+    </MudItem>
+
+    <!-- Tabela de Listagem -->
+    <MudItem xs="12" md="8">
+        <MudCard Elevation="0" Outlined="true">
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h6">Modelos Cadastrados</MudText>
+                </CardHeaderContent>
+                <CardHeaderActions>
+                    <MudChip T="string" Color="Color.Default" Size="Size.Small">@motos.Count modelo(s)</MudChip>
+                </CardHeaderActions>
+            </MudCardHeader>
+            <MudCardContent Class="pa-0">
+                <MudTable Items="motos"
+                          Hover="true"
+                          Loading="carregando"
+                          LoadingProgressColor="Color.Primary"
+                          Filter="FiltrarMoto"
+                          SortLabel="Ordenar por"
+                          Dense="true"
+                          Elevation="0">
+                    <ToolBarContent>
+                        <MudSpacer />
+                        <MudTextField @bind-Value="textoBusca"
+                                      Placeholder="Pesquisar..."
+                                      Adornment="Adornment.Start"
+                                      AdornmentIcon="@Icons.Material.Filled.Search"
+                                      IconSize="Size.Medium"
+                                      Variant="Variant.Outlined"
+                                      Margin="Margin.Dense"
+                                      Class="mt-0" />
+                    </ToolBarContent>
+                    <HeaderContent>
+                        <MudTh><MudTableSortLabel SortBy="new Func<Motocicleta, object>(m => m.Modelo)">Modelo</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<Motocicleta, object>(m => m.Familia)">Família</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<Motocicleta, object>(m => m.Cilindrada)">Cilindrada</MudTableSortLabel></MudTh>
+                        <MudTh><MudTableSortLabel SortBy="new Func<Motocicleta, object>(m => m.Ano)">Ano</MudTableSortLabel></MudTh>
+                        <MudTh Style="text-align:center">Ações</MudTh>
+                    </HeaderContent>
+                    <RowTemplate>
+                        <MudTd DataLabel="Modelo"><strong>@context.Modelo</strong></MudTd>
+                        <MudTd DataLabel="Família">@context.Familia</MudTd>
+                        <MudTd DataLabel="Cilindrada">@context.Cilindrada cc</MudTd>
+                        <MudTd DataLabel="Ano">@context.Ano</MudTd>
+                        <MudTd Style="text-align:center">
+                            <MudIconButton Icon="@Icons.Material.Filled.Delete"
+                                           Color="Color.Error"
+                                           Size="Size.Small"
+                                           OnClick="async () => await RemoverMotoAsync(context.Id)"
+                                           aria-label="Remover" />
+                        </MudTd>
+                    </RowTemplate>
+                    <NoRecordsContent>
+                        <MudText Class="pa-4" Typo="Typo.body2" Color="Color.Secondary">
+                            Nenhuma motocicleta encontrada.
+                        </MudText>
+                    </NoRecordsContent>
+                    <LoadingContent>
+                        <MudText Class="pa-4" Typo="Typo.body2" Color="Color.Secondary">Carregando...</MudText>
+                    </LoadingContent>
+                </MudTable>
+            </MudCardContent>
+        </MudCard>
+    </MudItem>
+</MudGrid>
+
+@code {
+    private List<Motocicleta> motos = [];
+    private Motocicleta novaMoto = new();
+    private bool carregando = true;
+    private bool salvando = false;
+    private bool formularioValido = false;
+    private string textoBusca = string.Empty;
+    private MudForm formulario = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await CarregarMotosAsync();
+    }
+
+    private async Task CarregarMotosAsync()
+    {
+        carregando = true;
+        motos = await MotoService.ObterTodasAsync();
+        carregando = false;
+    }
+
+    private async Task CadastrarMotoAsync()
+    {
+        await formulario.ValidateAsync();
+        if (!formularioValido) return;
+
+        salvando = true;
+        await MotoService.AdicionarAsync(novaMoto);
+        novaMoto = new();
+        await formulario.ResetAsync();
+        await CarregarMotosAsync();
+        salvando = false;
+    }
+
+    private async Task RemoverMotoAsync(int id)
+    {
+        bool? confirmado = await DialogService.ShowMessageBoxAsync(
+            "Atenção",
+            "Deseja realmente excluir esta motocicleta?",
+            yesText: "Excluir",
+            cancelText: "Cancelar"
+        );
+
+        if (confirmado == true)
+        {
+            await MotoService.RemoverAsync(id);
+            await CarregarMotosAsync();
+            Snackbar.Add("Motocicleta excluída com sucesso.", Severity.Success);
+        }
+    }
+
+    private bool FiltrarMoto(Motocicleta moto)
+    {
+        if (string.IsNullOrWhiteSpace(textoBusca)) return true;
+        return moto.Modelo.Contains(textoBusca, StringComparison.OrdinalIgnoreCase)
+            || moto.Familia.Contains(textoBusca, StringComparison.OrdinalIgnoreCase)
+            || moto.Ano.ToString().Contains(textoBusca);
+    }
+}

@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "dotnet watch",
+			"type": "shell",
+			"command": "dotnet watch",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

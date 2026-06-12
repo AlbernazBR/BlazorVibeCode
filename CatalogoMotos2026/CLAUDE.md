@@ -3,7 +3,7 @@
 ## Visão Geral do Projeto
 Uma aplicação web de pequeno porte construída para aprender Blazor Server, com foco em persistência de dados e arquitetura backend limpa. O sistema cataloga famílias e especificações técnicas de motocicletas estilo custom/cruiser da linha de 2026.
 
-- **Stack Tecnológica:** .NET 10 (LTS) / Blazor Server, Entity Framework Core, SQLite.
+- **Stack Tecnológica:** .NET 10 (LTS) / Blazor Server, Entity Framework Core, SQLite, MudBlazor.
 - **Arquitetura:** Separação estrita de conceitos com aplicação rigorosa do SOLID e inversão de dependência via interfaces.
 
 ---
