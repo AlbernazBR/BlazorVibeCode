@@ -6,13 +6,12 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Elevation="1" Color="Color.Default">
+    <MudAppBar Elevation="0" Color="Color.Default" Style="border-bottom: 1px solid #262b36;">
         <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start"
                        OnClick="AlternarMenu" />
-        <MudText Typo="Typo.h6" Class="ml-3" Style="color:#97dd3c; font-weight:700; letter-spacing:2px;">CATÁLOGO MOTOS 2026</MudText>
     </MudAppBar>
 
-    <MudDrawer @bind-Open="menuAberto" ClipMode="DrawerClipMode.Always" Elevation="2" Width="200px">
+    <MudDrawer @bind-Open="menuAberto" ClipMode="DrawerClipMode.Always" Elevation="0" Width="256px" Style="border-right: 1px solid #262b36;">
         <NavMenu />
     </MudDrawer>
 

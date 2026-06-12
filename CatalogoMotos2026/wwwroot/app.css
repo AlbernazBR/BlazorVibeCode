@@ -8,3 +8,65 @@ html, body {
 * {
     font-family: 'Outfit', 'ui-sans-serif', system-ui, sans-serif !important;
 }
+
+/* Heading weights */
+h1, h2, h3, h4, h5,
+.mud-typography-h1, .mud-typography-h2,
+.mud-typography-h3, .mud-typography-h4, .mud-typography-h5 {
+    font-weight: 700 !important;
+}
+
+/* Page breadcrumb */
+.page-breadcrumb {
+    font-size: 0.68rem;
+    letter-spacing: 2.5px;
+    color: #9fa3ad;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-breadcrumb::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background: #97dd3c;
+    border-radius: 2px;
+}
+
+/* Page heading */
+.page-heading {
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1.1 !important;
+}
+
+/* Card section labels */
+.mud-card-header .mud-typography-h6 {
+    font-size: 0.75rem !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+    color: #9fa3ad !important;
+}
+
+/* Table header cells */
+.mud-table-head .mud-table-cell {
+    font-size: 0.68rem !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+    color: #9fa3ad !important;
+}
+
+/* Nav link overrides (global fallback) */
+.mud-nav-link {
+    background-color: transparent !important;
+    border-radius: 0 !important;
+}
+

@@ -158,6 +158,6 @@ C:\Repository\Estudos\BlazorVibeCode\CatalogoMotos2026\bin\Debug\net10.0\MudBlaz
 C:\Repository\Estudos\BlazorVibeCode\CatalogoMotos2026\obj\Debug\net10.0\compressed\tzxjg6is5z-{0}-6x2ajsl5c8-6x2ajsl5c8.gz
 C:\Repository\Estudos\BlazorVibeCode\CatalogoMotos2026\obj\Debug\net10.0\compressed\0wz98yz2xy-{0}-xvsyfqkrg0-xvsyfqkrg0.gz
 C:\Repository\Estudos\BlazorVibeCode\CatalogoMotos2026\obj\Debug\net10.0\compressed\o7k4cxtn0u-{0}-k909wv51vp-k909wv51vp.gz
-C:\Repository\Estudos\BlazorVibeCode\CatalogoMotos2026\obj\Debug\net10.0\compressed\kkty941oag-{0}-wd3fefuc5i-wd3fefuc5i.gz
-C:\Repository\Estudos\BlazorVibeCode\CatalogoMotos2026\obj\Debug\net10.0\compressed\lduws5wk0q-{0}-wd3fefuc5i-wd3fefuc5i.gz
-C:\Repository\Estudos\BlazorVibeCode\CatalogoMotos2026\obj\Debug\net10.0\compressed\1icdjomybg-{0}-00jd6sxjhf-00jd6sxjhf.gz
+C:\Repository\Estudos\BlazorVibeCode\CatalogoMotos2026\obj\Debug\net10.0\compressed\1icdjomybg-{0}-b6o9sst0b7-b6o9sst0b7.gz
+C:\Repository\Estudos\BlazorVibeCode\CatalogoMotos2026\obj\Debug\net10.0\compressed\kkty941oag-{0}-9ey9jq2fca-9ey9jq2fca.gz
+C:\Repository\Estudos\BlazorVibeCode\CatalogoMotos2026\obj\Debug\net10.0\compressed\lduws5wk0q-{0}-9ey9jq2fca-9ey9jq2fca.gz
